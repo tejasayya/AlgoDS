@@ -1,5 +1,6 @@
 # AlgoDS
-CourseWork
+
+
 Steps:
 1. Clone the repo `git clone https://github.com/tejasayya/sorting.git`
 2. javac sorting/*.java
