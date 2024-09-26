@@ -6,4 +6,4 @@ Steps:
 2. javac sorting/*.java
 3. java sorting.randomInput
 4. java sorting.ReverseSortedInput
-5. java sortedInput
+5. java sorting.sortedInput
