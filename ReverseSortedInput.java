@@ -139,33 +139,19 @@ public class ReverseSortedInput extends JPanel {
             executionTimes[2][i] = measureExecutionTime(() -> SortingTechniques.heapSort(reversedArray3));
             executionTimes[3][i] = measureExecutionTime(() -> SortingTechniques.inPlaceQuickSort(0, reversedArray4.length - 1, reversedArray4));
             executionTimes[4][i] = measureExecutionTime(() -> SortingTechniques.modifiedQuickSort(reversedArray5, 0, reversedArray5.length - 1));
-
-            
-            //Time taken for Insertion sort for the reverse sorting input
-
-            System.out.println(String.format("--------------For input Size n = %d --------------",arraySizes[i]));
-
-            System.out.println("* INSERTION SORT *");
-            System.out.println("Execution time in Milliseconds: " + executionTimes[0][i]/1_000_000.0);
-            
-
-            //Time taken for Merge sort for the reverse sorting input
-            System.out.println("* MERGE SORT *");
-            System.out.println("Execution time in Milliseconds: " + executionTimes[1][i]/1_000_000.0);
-
-            //Time taken for heapSort for the reverse sorting input
-            System.out.println("* HEAP SORT *");
-            System.out.println("Execution time in Milliseconds: " + executionTimes[2][i]/1_000_000.0);
-
-            //Time taken for inplace quickSort for the reverse sorting input
-            System.out.println("* IN PLACE QUICK SORT *");
-            System.out.println("Execution time in Milliseconds: " + executionTimes[3][i]/1_000_000.0);
-
-            //Time taken for Modified quickSort Using median for the reverse sorting input
-            System.out.println("* MODIFIED QUICK SORT *");
-            System.out.println("Execution time in Milliseconds: " + executionTimes[4][i]/1_000_000.0);
-            
         }
+        
+        System.out.println("---------For Reverse Sorted Input----------");
+        System.out.println("Input Size (n) | Insertion Sort | MergeSort | HeapSort | InPlace Quick Sort | Modified Quick Sort");
+        
+        for(int x=0;x<executionTimes[0].length;x++){
+            System.out.print(arraySizes[x]+":  ");
+            for(int y=0; y<executionTimes.length;y++){
+                System.out.print((executionTimes[y][x]/1_000_000.0)+" ");
+            }
+            System.out.println();
+        }
+        System.out.println();
 
         JFrame frame = new JFrame("Sorting Algorithms Execution Time");
         ReverseSortedInput chart = new ReverseSortedInput(executionTimes, arraySizes);
